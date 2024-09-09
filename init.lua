@@ -1,4 +1,5 @@
 require("config.lazy")
+require("config.which-key-configuration")
 
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")

@@ -10,7 +10,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "tsserver", "html", "emmet_language_server", "tailwindcss" },
+				ensure_installed = { "lua_ls", "ts_ls", "html", "emmet_language_server", "tailwindcss" },
 			})
 		end,
 	},
@@ -24,15 +24,15 @@ return {
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.tsserver.setup({
+			lspconfig.ts_ls.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.html.setup({
 				capabilities = capabilities,
 			})
 			lspconfig.tailwindcss.setup({
-        filetypes = {"html", "css", "javascript", "typescript", "vue", "svelte"},
-      })
+				filetypes = { "html", "css", "javascript", "typescript", "vue", "svelte" },
+			})
 			lspconfig.emmet_language_server.setup({
 				filetypes = {
 					"css",
@@ -47,10 +47,6 @@ return {
 					"typescriptreact",
 				},
 			})
-
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-			vim.keymap.set({ "n", "v" }, "<Space>ca", vim.lsp.buf.code_action, {})
 
 			lspconfig.powershell_es.setup({
 				bundle_path = "path/to/your/bundle_path",

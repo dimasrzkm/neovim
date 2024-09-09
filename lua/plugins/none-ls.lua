@@ -12,7 +12,5 @@ return {
 				require("none-ls.diagnostics.eslint_d"),
 			},
 		})
-		-- key binding formating
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
 	end,
 }
